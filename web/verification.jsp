@@ -38,13 +38,14 @@ Class.forName("com.mysql.jdbc.Driver"); %>
                String sql = "SELECT * FROM verification WHERE (username= '"+usernameentered+"' "
              + "AND password ='"+passwordentered+"')";
                boolean verify = false ; 
-               con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/" + "maidaday","root","kikelomo") ;
+               con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/" + "maidaday","root","") ;
                
                st = (PreparedStatement) con.prepareStatement(sql) ;
                res= st.executeQuery() ;
                boolean recordexists = res.absolute(1) ;
+               
                if (recordexists==true)
-                   verify = false ; 
+                   verify = true ; 
                if(verify==true)
                {
                    response.sendRedirect("check.jsp");

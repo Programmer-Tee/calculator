@@ -48,7 +48,7 @@
 
 try
 {
-      con = DriverManager.getConnection("jdbc:mysql://localhost/maidaday", "root","kikelomo");
+      con = DriverManager.getConnection("jdbc:mysql://localhost/maidaday", "root","");
      st= (Statement) con.createStatement();
      
     
